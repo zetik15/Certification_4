@@ -295,9 +295,10 @@ body {
     .top__content {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
+        flex-wrap: wrap;
         gap: 39px;
+        justify-content: center;
+        align-items: center;
     }
 
     .img__man {
