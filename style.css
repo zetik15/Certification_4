@@ -18,6 +18,11 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.center {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+
 .header {
     padding-top: 18px;
     padding-bottom: 19px;
@@ -49,6 +54,7 @@ body {
     flex-wrap: wrap;
     background: #F1E4E6;
     margin-bottom: 65px;
+    gap: 39px;
 }
 
 .img__man {
@@ -57,11 +63,11 @@ body {
 }
 
 .title {
-    padding-top: 290px;
-    padding-bottom: 381px;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    flex-direction: row;
+    align-items: center;
 }
 
 .top__rectangle {
@@ -269,8 +275,8 @@ body {
 
 @media (max-width: 1024px) {
     .center {
-        padding-left: calc(50% - 376px);
-        padding-right: calc(50% - 376px);
+        padding-left: calc(50% - 384px);
+        padding-right: calc(50% - 384px);
     }
 
     .header__img {
@@ -290,7 +296,6 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: center;
         align-items: center;
         gap: 39px;
     }
@@ -301,8 +306,6 @@ body {
     }
 
     .title {
-        padding-top: 138px;
-        padding-bottom: 138px;
         width: 311px;
     }
 
