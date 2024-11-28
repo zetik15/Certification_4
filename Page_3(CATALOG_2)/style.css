@@ -295,6 +295,7 @@ body {
   gap: 11px;
   padding-left: 16px;
   cursor: pointer;
+  width: 90px;
 }
 .filter__summary:hover .filter__heading {
   color: #F16D7F;

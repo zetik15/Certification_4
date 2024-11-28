@@ -260,58 +260,77 @@ body {
   box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.1294117647);
   width: 652px;
   height: 306px;
+  position: relative;
 }
 .cart__content {
   width: 390px;
 }
 .cart__cross {
-  width: 18px;
-  height: 18px;
-  margin-top: 28px;
-  margin-right: 22px;
+  position: absolute;
+  top: 22px;
+  right: 28px;
   cursor: pointer;
 }
-.cart__close:hover path {
+.cart__cross:hover path {
   fill: #F16D7F;
-  transition: fill 0.1s;
+  transition: fill 0.1s ease;
 }
 .cart__specs {
   width: 262px;
   height: 222px;
   margin: 22px 57px 62px 31px;
 }
+.cart__heading {
+  margin-bottom: 42px;
+}
 .cart__title {
   font-size: 24px;
   font-weight: 400;
   line-height: 29px;
   color: #222222;
-  margin-bottom: 42px;
+  transition: color 0.1s ease;
+}
+.cart__title:hover {
+  color: #F16D7F;
 }
 .cart__desc {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+.cart__text {
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
   color: #575757;
 }
-.cart__price__span {
+.cart__text_select {
   color: #F16D7F;
 }
-.cart__quantity__number {
+.cart__number {
   border: 1px solid #EAEAEA;
+  outline: none;
   color: #656565;
-  display: inline-flex;
   width: 44px;
-  height: 26px;
-  justify-content: center;
-  align-items: center;
+  height: 25px;
   margin-left: 24px;
   cursor: pointer;
   transition: all 0.1s;
+  text-align: center;
+  font-family: Lato;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 22px;
+  -moz-appearance: textfield;
 }
-.cart__quantity__number:hover {
+.cart__number:focus {
+  border-color: #F16D7F;
+}
+.cart__number::-webkit-outer-spin-button, .cart__number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.cart__number:hover {
   border: 1px solid #F16D7F;
   color: #F16D7F;
 }
@@ -362,7 +381,7 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-.cart-shipping__city, .cart-shipping__state, .cart-shipping__postcode {
+.cart-shipping__text {
   border: 1px solid #A4A4A4;
   background-color: white;
   width: 360px;
@@ -372,10 +391,16 @@ body {
   color: #4A4A4A;
   outline: none;
 }
-.cart-shipping__city:focus, .cart-shipping__state:focus, .cart-shipping__postcode:focus {
+.cart-shipping__text::-moz-placeholder {
+  color: #B1B1B1;
+}
+.cart-shipping__text::placeholder {
+  color: #B1B1B1;
+}
+.cart-shipping__text:focus {
   border-color: #F16D7F;
 }
-.cart-shipping__city:hover, .cart-shipping__state:hover, .cart-shipping__postcode:hover {
+.cart-shipping__text:hover {
   border-color: #F16D7F;
 }
 .cart-shipping__btn {
