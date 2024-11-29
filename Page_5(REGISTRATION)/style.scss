@@ -315,6 +315,16 @@ body {
         font-size: 13px;
         font-weight: 400;
         line-height: 18px;
+        transition: all .15s ease;
+
+        &:hover {
+            border-color: $colorSelectSite;
+        }
+    
+        &:focus {
+            border-color: $colorSelectSite;
+            outline: none;
+        }
 
         &::placeholder {
             font-size: 13px;
@@ -406,6 +416,14 @@ body {
         font-size: 13px;
         font-weight: 400;
         line-height: 18px;
+
+        &:hover {
+            border-color: $colorSelectSite;
+        }
+    
+        &:focus {
+            border-color: $colorSelectSite;
+        }
 
         &::placeholder {
             font-size: 13px;

@@ -275,6 +275,14 @@ body {
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
+  transition: all 0.15s ease;
+}
+.person__input:hover {
+  border-color: #F16D7F;
+}
+.person__input:focus {
+  border-color: #F16D7F;
+  outline: none;
 }
 .person__input::-moz-placeholder {
   font-size: 13px;
@@ -363,6 +371,12 @@ body {
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
+}
+.login__input:hover {
+  border-color: #F16D7F;
+}
+.login__input:focus {
+  border-color: #F16D7F;
 }
 .login__input::-moz-placeholder {
   font-size: 13px;
