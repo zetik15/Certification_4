@@ -2,11 +2,11 @@
 @import 'mixins';
 
 html {
-    padding: 0;
-    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
     overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
 }
 
 * {
@@ -24,8 +24,8 @@ body {
     padding-right: calc(50% - $widthSite / 2);
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .center {
@@ -53,7 +53,6 @@ body {
     &__img__right {
         display: flex;
         gap: 33px;
-        width: 159px;
         height: 37px;
         align-items: center;
     }
@@ -254,6 +253,7 @@ body {
     padding-top: 60px;
     padding-bottom: 60px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     
@@ -301,8 +301,9 @@ body {
     &__arrows {
         display: flex;
         position: absolute;
-        padding-top: 365px;
-        padding-bottom: 365px;
+        top: 50%;
+        transform: translateY(-50%);
+        gap: 1504px;
     }
 
     &__right:hover .slider-photo__arrow path{
@@ -317,14 +318,10 @@ body {
 
     &__left {
         @include centerSliderPhoto();
-        position: absolute;
-        right: 745px;
     }
 
     &__right {
         @include centerSliderPhoto();
-        position: absolute;
-        left: 745px;
     }
 
     &__rectangle {
@@ -674,10 +671,8 @@ body {
 
 .footer {
     background: $colorText;
-    display: flex;
+    @include centerContentRow();
     gap: 665px;
-    justify-content: center;
-    align-items: center;
     height: 79px;
 
     &__rights {
@@ -784,5 +779,74 @@ body {
     &__icons:hover &__twitter path {
         fill: $fillFooterIconsHover;
         transition: fill .2s ease;
+    }
+}
+
+@media (max-width: 1440px) {
+    .slider-photo {
+
+        &__arrows {
+            gap: 1350px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .center {
+        padding-left: calc(50% - 376px);
+        padding-right: calc(50% - 376px);
+    }
+
+    .header {
+
+        &__img {
+            gap: 424px;
+        }
+    }
+
+    .slider-photo {
+
+        &__arrows {
+            gap: 675px;
+        }
+    }
+
+    .item-details {
+
+        &__content {
+            margin-top: 0;
+        }
+    }
+
+    .sales {
+        column-gap: 16px;
+
+        article:last-child {
+            display: none;
+        }
+    }
+
+    .subscribe {
+        @include centerContentColumn();
+        gap: 48px;
+        height: 614px;
+        padding-top: 64px;
+        padding-bottom: 140px;
+
+        &__promotion__title {
+            line-height: 39px;
+        }
+
+        &__promotion__text {
+            line-height: 29px;
+        }
+    }
+
+    .footer {
+        gap: 308px;
+
+        &__rights {
+            width: 251px;
+        }
     }
 }

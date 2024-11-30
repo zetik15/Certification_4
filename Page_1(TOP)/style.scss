@@ -1,14 +1,6 @@
 @import 'mixins';
 @import 'vars';
 
-html {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -24,8 +16,8 @@ body {
     padding-right: calc(50% - $widthSite / 2);
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .center {
@@ -53,7 +45,6 @@ body {
     &__img__right {
         display: flex;
         gap: 33px;
-        width: 159px;
         height: 37px;
         align-items: center;
     }
@@ -250,19 +241,20 @@ body {
 }
 
 .top__content {
+
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 64px;
     background: #F1E4E6;
     margin-bottom: 65px;
-    gap: 63px;
 
     &__img__man {
-        width: 800px;
-        height: 764px;
+        max-width: 50%;
+        height: auto;
     }
     
     &__title {
-        @include centerContentRow ();
+        display: flex;
         gap: 16px;
     }
     
@@ -508,8 +500,6 @@ body {
 .button {
     @include centerContentRow();
     margin-bottom: 95px;
-    padding-top: 15px;
-    padding-bottom: 14px;
 
     &__browse {
         font-size: 16px;
@@ -695,7 +685,10 @@ body {
 
 .footer {
     background: $colorText;
-    @include centerContentColumn();
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 665px;
     height: 79px;
 
@@ -808,192 +801,120 @@ body {
     }
 }
 
-@media (max-width: 1440px) {
-    .header__dropdown__menu:focus-within .header__menu__content {
-        transform: translate(0px, 4px);
-    }
-}
-
 @media (max-width: 1024px) {
     .center {
-        padding-left: calc(50% - 384px);
-        padding-right: calc(50% - 384px);
+        padding-left: calc(50% - 376px);
+        padding-right: calc(50% - 376px);
     }
 
-    .header__img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 424px;
-    }
+    .header {
 
-    .header__img__right {
-        width: 169px;
-        display: flex;
-        gap: 25px;
+        &__img {
+            gap: 424px;
+        }
     }
 
     .top__content {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 39px;
-        justify-content: center;
-        align-items: center;
-    }
+        padding-left: calc(50% - 384px);
+        padding-right: calc(50% - 384px);
+        gap: 40px;
+        margin-bottom: 20px;
 
-    .top__content__img__man {
-        width: 386px;
-        height: 368px;
-    }
+        &__img__man {
+            max-width: 50%;
+            height: auto;
+        }
 
-    .top__content__title {
-        width: 311px;
-    }
+        &__top__title {
+            max-width: 311px;
+            font-size: 44px;
+            line-height: 53px;
+        }
 
-    .top__content__top__title {
-        width: 283px;
-        font-size: 44px;
-        line-height: 53px;
-    }
+        &__small {
+            font-size: 24px;
+            line-height: 29px;
+        }
 
-    .top__content__small {
-        font-size: 24px;
-        line-height: 29px;
-    }
-
-    .top__content__pink__text {
-        font-size: 24px;
-        line-height: 29px;
+        &__pink__text {
+            font-size: 24px;
+            line-height: 29px;
+        }
     }
 
     .offer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
         gap: 20px;
+        margin-bottom: 155px;
+
+        &__item img {
+            width: 232px;
+        }
+        
+        &__item::before {
+            content: '';
+            width: 232px;
+            height: 168px;
+        }
+
+        &__item__big img {
+            display: none;
+        }
+
+        &__item__big {
+            background-image: url(img/photo_big_tablet.png);
+            width: 735px;
+            height: 116px;
+        }
+
+        &__item__big::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            bottom: 0;
+            z-index: 0;
+            background-color: #211616B2;
+        }
+
+        &__overlay__desktop__big {
+            display: none;
+        }
     }
 
-    .offer__item img {
-        width: 232px;
-    }
+    .products {
 
-    .offer__item::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        width: 232px;
-        height: 168px;
-    }
-
-    .offer__item__big img {
-        display: none;
-    }
-
-    .offer__item__big {
-        background-image: url(img/photo_big_tablet.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 735px;
-        height: 116px;
-    }
-
-    .offer__item__big::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        bottom: 0;
-        z-index: 0;
-        background-color: #211616B2;
-    }
-
-    .offer__overlay__desktop__big {
-        display: none;
-    }
-
-    .products__title__products {
-        display: flex;
-        gap: 3px;
-        margin-top: 110px;
-        margin-bottom: 73px;
-    }
-
-    .products__text__products {
-        margin-bottom: 0;
+        &__title__products {
+            margin-bottom: 73px;
+        }
     }
 
     .sales {
-        width: 100%;
-        display: flex;
-        column-gap: 15px;
-        row-gap: 15px;
         margin-bottom: 32px;
-    }
-
-    .sales__name {
-        padding-left: 18px;
-        margin-bottom: 12px;
-    }
-
-    .sales__desc {
-        margin-top: 0;
-        margin-bottom: 18px;
-    }
-
-    .sales__price {
-        margin-top: 0;
-        padding-left: 18px;
-        padding-bottom: 20px;
-    }
-
-    .perks {
-        height: 610px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 48px;
-        padding-top: 48px;
-        padding-bottom: 64px;
     }
 
     .button {
         margin-bottom: 65px;
     }
 
-    .subscribe {
-        height: 693px;
+    .perks {
+        height: 610px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 48px;
     }
 
-    .promotion {
-        height: 137px;
-        margin-bottom: 140px;
-    }
-
-    .promotion__title {
-        line-height: 39px;
-    }
-
-    .promotion_text {
-        line-height: 29px;
-        margin-bottom: 32px;
+    .subscribe {
+        height: 614px;
+        padding-top: 64px;
+        padding-bottom: 140px;
+        gap: 48px;
     }
 
     .footer {
-        display: flex;
-        gap: 305px;
-    }
+        gap: 308px;
 
-    .footer__rights {
-        width: 251px;
+        &__rights {
+            width: 251px;
+        }
     }
 }
 

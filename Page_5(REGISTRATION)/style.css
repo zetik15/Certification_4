@@ -310,33 +310,36 @@ body {
   align-items: center;
   gap: 10px;
 }
-.gender__checkbox {
-  position: relative;
+.gender__label__tablet_mobile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  display: none;
+}
+.gender__radio {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #A4A4A4;
-  border-radius: 50%;
+  -moz-appearance: none;
+  appearance: none;
   width: 17px;
   height: 17px;
   cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.15s ease;
+  border: 1px solid #A4A4A4;
 }
-.gender__checkbox:hover {
+.gender__radio:hover {
   border-color: #F16D7F;
 }
-.gender__checkbox:checked {
-  border-color: #F16D7F;
+.gender__radio:checked {
+  position: relative;
 }
-.gender__checkbox:checked::after {
+.gender__radio:checked::after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 7px;
-  height: 7px;
+  top: 3px;
+  left: 3px;
+  width: 9px;
+  height: 9px;
   background-color: #F16D7F;
   border-radius: 50%;
 }
@@ -667,4 +670,56 @@ body {
 .footer__icons:hover .footer__twitter path {
   fill: #fff;
   transition: fill 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 376px);
+    padding-right: calc(50% - 376px);
+  }
+  .header__img {
+    gap: 424px;
+  }
+  .content {
+    gap: 22px;
+  }
+  .content__right {
+    width: 354px;
+  }
+  .perks__title {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 32px;
+  }
+  .perks__text {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 22px;
+  }
+  .perks__item {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .gender__label__tablet_mobile {
+    display: flex;
+  }
+  .subscribe {
+    height: 614px;
+    flex-direction: column;
+    gap: 48px;
+    padding-top: 64px;
+    padding-bottom: 140px;
+  }
+  .subscribe__promotion__title {
+    line-height: 39px;
+  }
+  .subscribe__promotion__text {
+    line-height: 29px;
+  }
+  .footer {
+    gap: 308px;
+  }
+  .footer__rights {
+    width: 251px;
+  }
 }/*# sourceMappingURL=style.css.map */

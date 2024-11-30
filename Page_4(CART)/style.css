@@ -239,7 +239,7 @@ body {
 
 .cart-wrapper {
   display: flex;
-  justify-content: space-between;
+  gap: 128px;
 }
 
 .cart-left {
@@ -685,4 +685,73 @@ body {
 .footer__icons:hover .footer__twitter path {
   fill: #fff;
   transition: fill 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 367px);
+    padding-right: calc(50% - 367px);
+  }
+  .header__img {
+    gap: 424px;
+  }
+  .cart-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+  .cart-left {
+    gap: 0;
+  }
+  .cart {
+    margin-top: 59px;
+    margin-bottom: 62px;
+    width: 734px;
+  }
+  .cart__item {
+    width: 734px;
+  }
+  .cart-actions {
+    justify-content: center;
+    width: 508px;
+    gap: 48px;
+    margin-bottom: 64px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cart-actions__btn {
+    white-space: nowrap;
+  }
+  .cart-wrapper-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .cart-shipping {
+    margin-top: 0;
+    margin-bottom: 128px;
+  }
+  .cart-total {
+    margin-bottom: 108px;
+  }
+  .subscribe {
+    height: 614px;
+    flex-direction: column;
+    gap: 48px;
+    padding-top: 64px;
+    padding-bottom: 140px;
+  }
+  .subscribe__promotion__title {
+    line-height: 39px;
+  }
+  .subscribe__promotion__text {
+    line-height: 29px;
+  }
+  .footer {
+    gap: 308px;
+  }
+  .footer__rights {
+    width: 251px;
+  }
 }/*# sourceMappingURL=style.css.map */
