@@ -138,6 +138,20 @@ body {
 .header__burger-input:checked ~ .header__menu__content {
   right: 0;
 }
+.header__dropdown__menu__title__wrapper {
+  display: none;
+  display: flex;
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  color: #F16D7F;
+  flex-direction: column;
+}
+.header__dropdown__menu__link {
+  display: none;
+  color: #F16D7F;
+  border-bottom: 2px solid #F16D7F;
+}
 .header__dropdown__menu__title {
   font-size: 14px;
   font-weight: 700;
@@ -721,5 +735,91 @@ body {
   }
   .footer__rights {
     width: 251px;
+  }
+}
+@media (max-width: 767px) {
+  .center {
+    padding-left: calc(50% - 179px);
+    padding-right: calc(50% - 179px);
+  }
+  .header__img {
+    gap: 200px;
+  }
+  .header__menu__content {
+    height: 690px;
+  }
+  .header__dropdown__menu__title__wrapper {
+    display: flex;
+  }
+  .header__dropdown__menu__link {
+    display: block;
+  }
+  .header__img__right {
+    width: 32px;
+    height: 23px;
+    color: white;
+  }
+  .header__icon__4 {
+    display: none;
+  }
+  .header__cart {
+    display: none;
+  }
+  .top-head {
+    justify-content: center;
+  }
+  .content {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 96px;
+  }
+  .perks__title {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .perks__text {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .perks__list {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .subscribe {
+    min-height: 550px;
+    padding-top: 64px;
+    padding-bottom: 110px;
+  }
+  .subscribe__quote {
+    width: 343px;
+    margin-bottom: 59px;
+  }
+  .subscribe__quote__text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .subscribe__quote__text__italics {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .promotion__wrapper {
+    width: 271px;
+    margin-bottom: 22px;
+  }
+  .promotion__title {
+    line-height: 28px;
+  }
+  .promotion__text {
+    font-size: 14px;
+  }
+  .promotion__box__email {
+    width: 341px;
+  }
+  .footer {
+    flex-direction: column-reverse;
+    min-height: 143px;
+    gap: 40px;
+    padding-top: 43px;
+    padding-bottom: 9px;
   }
 }/*# sourceMappingURL=style.css.map */

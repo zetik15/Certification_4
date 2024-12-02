@@ -141,6 +141,22 @@ body {
         right: 0;
     }
 
+    &__dropdown__menu__title__wrapper {
+        display: none;
+        display: flex;
+        position: absolute;
+        left: 15px;
+        bottom: 10px;
+        color: #F16D7F;
+        flex-direction: column;
+    }
+
+    &__dropdown__menu__link {
+        display: none;
+        color: $colorSelectSite;
+        border-bottom: 2px solid #F16D7F;
+    }
+
     &__dropdown__menu__title {
         font-size: 14px;
         font-weight: 700;
@@ -609,22 +625,24 @@ body {
 
 .promotion {
     @include centerContentColumn();
-    width: 557px;
+
+    &__wrapper {
+        width: 557px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
 
     &__title {
         color: $colorText;
         font-size: 24px;
         font-weight: 700;
         line-height: 40px;
-        text-align: center;
     }
     
     &__text {
         font-size: 18px;
         font-weight: 400;
         line-height: 30px;
-        text-align: center;
-        margin-bottom: 32px; 
     }
     
     &__form {
@@ -920,132 +938,128 @@ body {
 
 @media (max-width: 767px) {
     .center {
-        padding-left: calc(50% - 188px);
-        padding-right: calc(50% - 188px);
+        padding-left: calc(50% - 184px);
+        padding-right: calc(50% - 184px);
     }
 
-    .header__img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 200px;
-    }
+    .header {
+        &__img {
+            gap: 200px;
+        }
 
-    .header__img__right {
-        width: 32px;
-        height: 23px;
-        color: white;
-    }
+        &__menu__content {
+            height: 690px;
+        }
 
-    .header__icon__4 {
-        display: none;
-    }
+        &__dropdown__menu__title__wrapper {
+            display: flex;
+        }
 
-    .header__cart {
-        display: none;
-    }
+        &__dropdown__menu__link {
+            display: block;
+        }
 
-    .top__content__img__man {
-        display: none;
+        &__img__right {
+            width: 32px;
+            height: 23px;
+            color: white;
+        }
+
+        &__icon__4 {
+            display: none;
+        }
+
+        &__cart {    
+            display: none;
+        }
     }
 
     .top__content {
         min-height: 363px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .top__content__title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 273px;
-    }
-    
-    .top__content__top__rectangle {
-        width: 12px;
-        height: 61px;
-    }
-
-    .top__content__top__title {
-        font-size: 38px;
-        line-height: 30px;
-        width: 236px;
-    }
-
-    .top__content__small {
-        font-size: 20px;
-        line-height: 24px;
-    }
-
-    .top__content__pink__text {
-        font-size: 20px;
-        line-height: 24px;
-    }
-
-    .offer__item img {
-        width: 343px;
-    }
-
-    .offer__item::before {
-        content: '';
-        width: 343px;
-        height: 247px;
-    }
-
-    .offer__item__big::before {
-        content: '';
-        width: 343px;
-        height: 111px;
-    }
-
-    .offer__item__big {
-        background-image: url(img/photo_4_mobile.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 343px;
-        height: 111px;
+        @include centerContentRow();
         margin-bottom: 64px;
+
+        &__img__man {
+            display: none;
+        }
+
+        &__title {
+            width: 263px;
+        }
+
+        &__top__rectangle {
+            width: 12px;
+            height: 61px;
+        }
+
+        &__top__title {
+            font-size: 38px;
+            line-height: 28px;
+            width: 236px;
+        }
+
+        &__small {
+            font-size: 20px;
+            line-height: 14px;
+        }
+
+        &__pink__text {
+            font-size: 20px;
+            line-height: 14px;
+        }
     }
 
-    .offer__overlay__mobile__big {
-        display: block;
+    .offer {
+        margin-bottom: 64px;
+
+        &__item img {
+            width: 343px;
+        }
+
+        &__item::before {
+            content: '';
+            width: 343px;
+            height: 247px;
+        }
+
+        &__item__big::before {
+            content: '';
+            width: 343px;
+            height: 111px;
+        }
+
+        &__item__big {
+            background-image: url(img/photo_4_mobile.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 343px;
+            height: 111px;
+        }
+
+        &__overlay__mobile__big {
+            display: block;
+        }
+
+        &__overlay__desktop__big {
+            display: none;
+        }
     }
 
-    .offer__overlay__desktop__big {
-        display: none;
-    }
-
-    .products__h3__products__title {
-        margin-bottom: 3px;
+    .products {
+        &__title__products {
+            margin-bottom: 65px;
+        }
     }
 
     .sales {
-        row-gap: 16px;
-        column-gap: 0;
-        margin-bottom: 41px;
-    }
+        @include centerContentColumn();
+        gap: 16px;
+        margin-bottom: 40px;
 
-    .sales__item {
-        width: 359px;
-    }
-
-    .sales__name {
-        margin-top: 25px;
-        margin-bottom: 13px;
-        padding-left: 18px;
-    }
-
-    .sales__desc {
-        font-weight: 400;
-        opacity: 0.7;
-        margin-bottom: 18px;
-    }
-
-    .sales__price {
-        padding-left: 18px;
+        &__item {
+            max-height: 580px;
+        }
     }
 
     .button {
@@ -1053,80 +1067,82 @@ body {
     }
 
     .perks {
-        padding-top: 81px;
-        padding-bottom: 81px;
-        display: flex;
-        flex-direction: column;
+        @include centerContentColumn();
         gap: 47px;
-        height: 610px;
-    }
+        min-height: 610px;
 
-    .perks__item {
-        width: 348px;
-    }
+        &__item {
+            width: 348px;
+        }
 
-    .perks__icon__6 {
-        width: 43px;
-        height: 31px;
-    }
+        &__title {
+            margin-top: 27px;
+            margin-bottom: 16px;
+        }
 
-    .perks__icon__7 {
-        width: 39px;
-        height: 39px;
-    }
+        &__text {
+            width: 347px;
+        }
 
-    .perks__icon__8 {
-        width: 45px;
-        height: 34px;
-    }
+        &__icon__6 {
+            width: 43px;
+            height: 31px;
+        }
 
-    .perks__title {
-        display: flex;
-        gap: 15px;
-        margin-top: 27px;
-    }
+        &__icon__7 {
+            width: 38px;
+            height: 39px;
+        }
 
-    .perks__text {
-        width: 348px;
+        &__icon__8 {
+            width: 45px;
+            height: 34px;
+        }
     }
 
     .subscribe {
-        height: 550px;
+        min-height: 550px;
         padding-top: 64px;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        gap: 59px;
-    }
+        padding-bottom: 110px;
 
-    .subscribe__quote {
-        width: 343px;
-    }
+        &__quote {
+            width: 343px;
+            margin-bottom: 59px;
+        }
 
-    .subscribe__quote__woman {
-        width: 91px;
-        height: 91px;
-        margin-bottom: 29px;
-    }
+        &__quote__text {
+            font-size: 18px;
+            line-height: 22px;
 
+            &__italics {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+    
     .promotion {
-        width: 341px;
-    }
+        &__wrapper {
+            width: 271px;
+            margin-bottom: 22px;
+        }
 
-    .promotion__title {
-        line-height: 37px;
-    }
+        &__title {
+            line-height: 28px;
+        }
 
-    .promotion__text {
-        font-size: 14px;
-        line-height: 21px;
-        margin-bottom: 27px;
+        &__text {
+            font-size: 14px;
+        }
+
+        &__box__email {
+            width: 341px;
+        }
     }
 
     .footer {
-        height: 143px;
-        display: flex;
         flex-direction: column-reverse;
+        min-height: 143px;
         gap: 40px;
         padding-top: 43px;
         padding-bottom: 9px;

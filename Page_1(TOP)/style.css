@@ -122,6 +122,20 @@ body {
 .header__burger-input:checked ~ .header__menu__content {
   right: 0;
 }
+.header__dropdown__menu__title__wrapper {
+  display: none;
+  display: flex;
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  color: #F16D7F;
+  flex-direction: column;
+}
+.header__dropdown__menu__link {
+  display: none;
+  color: #F16D7F;
+  border-bottom: 2px solid #F16D7F;
+}
 .header__dropdown__menu__title {
   font-size: 14px;
   font-weight: 700;
@@ -575,21 +589,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.promotion__wrapper {
   width: 557px;
+  text-align: center;
+  margin-bottom: 32px;
 }
 .promotion__title {
   color: #222222;
   font-size: 24px;
   font-weight: 700;
   line-height: 40px;
-  text-align: center;
 }
 .promotion__text {
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
-  text-align: center;
-  margin-bottom: 32px;
 }
 .promotion__form {
   display: flex;
@@ -832,14 +847,20 @@ body {
 }
 @media (max-width: 767px) {
   .center {
-    padding-left: calc(50% - 188px);
-    padding-right: calc(50% - 188px);
+    padding-left: calc(50% - 184px);
+    padding-right: calc(50% - 184px);
   }
   .header__img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 200px;
+  }
+  .header__menu__content {
+    height: 690px;
+  }
+  .header__dropdown__menu__title__wrapper {
+    display: flex;
+  }
+  .header__dropdown__menu__link {
+    display: block;
   }
   .header__img__right {
     width: 32px;
@@ -852,20 +873,20 @@ body {
   .header__cart {
     display: none;
   }
-  .top__content__img__man {
-    display: none;
-  }
   .top__content {
     min-height: 363px;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 64px;
+  }
+  .top__content__img__man {
+    display: none;
   }
   .top__content__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 273px;
+    width: 263px;
   }
   .top__content__top__rectangle {
     width: 12px;
@@ -873,16 +894,19 @@ body {
   }
   .top__content__top__title {
     font-size: 38px;
-    line-height: 30px;
+    line-height: 28px;
     width: 236px;
   }
   .top__content__small {
     font-size: 20px;
-    line-height: 24px;
+    line-height: 14px;
   }
   .top__content__pink__text {
     font-size: 20px;
-    line-height: 24px;
+    line-height: 14px;
+  }
+  .offer {
+    margin-bottom: 64px;
   }
   .offer__item img {
     width: 343px;
@@ -904,7 +928,6 @@ body {
     background-size: contain;
     width: 343px;
     height: 111px;
-    margin-bottom: 64px;
   }
   .offer__overlay__mobile__big {
     display: block;
@@ -912,96 +935,88 @@ body {
   .offer__overlay__desktop__big {
     display: none;
   }
-  .products__h3__products__title {
-    margin-bottom: 3px;
+  .products__title__products {
+    margin-bottom: 65px;
   }
   .sales {
-    row-gap: 16px;
-    -moz-column-gap: 0;
-         column-gap: 0;
-    margin-bottom: 41px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
   }
   .sales__item {
-    width: 359px;
-  }
-  .sales__name {
-    margin-top: 25px;
-    margin-bottom: 13px;
-    padding-left: 18px;
-  }
-  .sales__desc {
-    font-weight: 400;
-    opacity: 0.7;
-    margin-bottom: 18px;
-  }
-  .sales__price {
-    padding-left: 18px;
+    max-height: 580px;
   }
   .button {
     margin-bottom: 96px;
   }
   .perks {
-    padding-top: 81px;
-    padding-bottom: 81px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 47px;
-    height: 610px;
+    min-height: 610px;
   }
   .perks__item {
     width: 348px;
+  }
+  .perks__title {
+    margin-top: 27px;
+    margin-bottom: 16px;
+  }
+  .perks__text {
+    width: 347px;
   }
   .perks__icon__6 {
     width: 43px;
     height: 31px;
   }
   .perks__icon__7 {
-    width: 39px;
+    width: 38px;
     height: 39px;
   }
   .perks__icon__8 {
     width: 45px;
     height: 34px;
   }
-  .perks__title {
-    display: flex;
-    gap: 15px;
-    margin-top: 27px;
-  }
-  .perks__text {
-    width: 348px;
-  }
   .subscribe {
-    height: 550px;
+    min-height: 550px;
     padding-top: 64px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 59px;
+    padding-bottom: 110px;
   }
   .subscribe__quote {
     width: 343px;
+    margin-bottom: 59px;
   }
-  .subscribe__quote__woman {
-    width: 91px;
-    height: 91px;
-    margin-bottom: 29px;
+  .subscribe__quote__text {
+    font-size: 18px;
+    line-height: 22px;
   }
-  .promotion {
-    width: 341px;
+  .subscribe__quote__text__italics {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .promotion__wrapper {
+    width: 271px;
+    margin-bottom: 22px;
   }
   .promotion__title {
-    line-height: 37px;
+    line-height: 28px;
   }
   .promotion__text {
     font-size: 14px;
-    line-height: 21px;
-    margin-bottom: 27px;
+  }
+  .promotion__box__email {
+    width: 341px;
   }
   .footer {
-    height: 143px;
-    display: flex;
     flex-direction: column-reverse;
+    min-height: 143px;
     gap: 40px;
     padding-top: 43px;
     padding-bottom: 9px;
